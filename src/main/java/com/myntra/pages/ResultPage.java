@@ -17,14 +17,16 @@ public class ResultPage {
 
 	@FindBy(css = "ul.categories-list")
 	WebElement categoryList;
-
-	@FindBy(xpath = "//h4[@class=\"product-product\"]")
+	@FindBy(xpath="//input[@class=\"desktop-searchBar\"]")
+	//@FindBy(xpath = "//h4[@class=\"product-product\"]")
 	List<WebElement> descriptions;
 
 	public void clickOnCategory(String categoryName) {
 		WebElement tShirtsCat = categoryList.findElement(By.xpath("//label[text()='" + categoryName + "']"));
 		tShirtsCat.click();
 	}
+
+	
 
 	public ResultPage() {
 		PageFactory.initElements(Keyword.driver, this);
