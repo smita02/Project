@@ -33,13 +33,15 @@ import com.myntra.utils.OR;
 public class TestCases extends TestBase{
 
 	@Test
-	public void verifyDescriptionOfSearchResultForTShirtsUsingPom() {
+	public void verifyDescriptionOfSearchResultForTShirtsUsingPom() throws InterruptedException {
 		HomePage homepage = new HomePage();
 		homepage.hoverOnMenMenu();
 		homepage.clickOnTShirtsMenu();
+		homepage.searchBoxItems("xyz");
 		ResultPage resultPage = new ResultPage();
 		resultPage.clickOnCategory("Tshirts");
 		resultPage.verifyAllProductDescriptionsContains("T-Shirts");
+		
 	}
 }
 
